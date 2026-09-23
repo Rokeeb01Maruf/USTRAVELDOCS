@@ -897,15 +897,6 @@ section.nav-bar{
         max-width: 100%;
     }
 
-    .footer-first{
-        width: 100%;
-    }
-
-    .newsletter{
-        margin-inline: 40px;
-        max-width: calc(100%-40px);
-    }
-
     .newsletter .subscribe input{
         max-width: 100%;
     }
