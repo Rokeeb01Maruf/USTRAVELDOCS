@@ -37,8 +37,6 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    padding-inline: clamp(5%, 80px, 5%);
-    padding-top: 20px;
     padding-bottom: 60px;
     position: relative;
     display: flex;
@@ -96,6 +94,9 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-inline: clamp(5%, 80px, 5%);
+    padding-top: 20px;
+    width: 100vw;
 }
 
 nav a{
@@ -121,6 +122,7 @@ nav a{
 }
 
 .header-main{
+    padding-inline: clamp(5%, 80px, 5%);
     margin-top: 80px;
     display: flex;
     justify-content: space-between;
@@ -225,6 +227,7 @@ nav a{
     display: flex;
     justify-content: space-between;
     margin-right: 120px;
+    padding-inline: clamp(5%, 80px, 5%);
 }
 
 .first-small-card{
@@ -677,26 +680,43 @@ section.nav-bar{
 }
 
 @media (max-width: 530px) {
+    nav.active{
+        position: relative;
+        background-color: rgba(0, 0, 0, .7);
+    }
+
+    nav section.nav{
+        width: 100%;
+        background-color: rgba(0, 0, 0, .7);
+        top: 100%;
+        padding-inline: clamp(5%, 80px, 5%);
+        flex-direction: column;
+        row-gap: 10px;
+        padding-block: 10px;
+    }
+
+    nav section.header-btn{
+        bottom: -333%;
+        background-color: rgba(0, 0, 0, .7);
+        width: 100%;
+        padding-inline: clamp(5%, 80px, 5%);
+        padding-bottom: 20px;
+    }
+
     nav section.nav, nav section.header-btn{
-        display: none;
+        position: absolute;
+        left: 0;
     }
 
     nav section.nav-bar{
         display: flex;
-        row-gap: 5px;
-        flex-direction: column;
     }
 
-    nav section.nav-bar span{
-
-        width: 25px;
-        height: 3px;
-        background-color: white;
+    .nav-bar img{
+        cursor: pointer;
     }
 
-    nav{
-        margin-right: 20px;
-    }
+
 
     .header-main{
         margin-top: 20px;
