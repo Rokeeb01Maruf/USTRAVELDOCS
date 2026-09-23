@@ -27,6 +27,8 @@
 
 body{
     font-family: visa;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 header{
@@ -35,17 +37,19 @@ header{
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
-    padding-inline: 80px;
+    padding-inline: clamp(5%, 80px, 5%);
     padding-top: 20px;
     padding-bottom: 60px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .search{
     position: absolute;
     bottom: -18px;
-    left: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
 }
@@ -62,8 +66,8 @@ header{
 
 .search img{
     position: absolute;
-    top: 12px;
-    left: 67%;
+    top: 15px;
+    right: 20px;
     width: 14px;
 }
 
@@ -220,7 +224,7 @@ nav a{
 .header-footer{
     display: flex;
     justify-content: space-between;
-    margin-right: 150px;
+    margin-right: 120px;
 }
 
 .first-small-card{
@@ -265,7 +269,7 @@ main{
 }
 
 .main-first{
-    padding-inline: 80px;
+    padding-inline: clamp(5%, 80px, 5%);
     display: flex;
     column-gap: 150px;
     position: relative;
@@ -320,7 +324,7 @@ main{
 .main-second{
     background-color: #FBFBFB;
     padding-block: 50px;
-    padding-inline: 80px;
+    padding-inline: clamp(5%, 80px, 5%);
     color: var(--body-main-light-text);
 }
 
@@ -377,9 +381,11 @@ main{
 
 footer{
     margin-block: 50px 30px;
-    margin-inline: 80px;
+    margin-inline: clamp(5%, 80px, 5%);
     background-color: var(--footer-icon-color);
     z-index: 10000;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-first{
@@ -404,7 +410,8 @@ footer{
     position: absolute;
     width: 450px;
     top: -16%;
-    right: 18%;
+    transform: translateX(-50%);
+    left: 50%;
 }
 
 .footer-first-left h1{
@@ -488,7 +495,8 @@ footer{
 
 .footer-second{
     background: white;
-    padding-inline: 100px;
+    margin-inline: auto;
+    width: 100%;
     padding-top: 50px;
     display: flex;
     flex-direction: column;
@@ -557,10 +565,12 @@ footer{
     padding-right: 130px;
     padding-left: 140px;
     margin-block: 20px;
+    align-items: center;
 }
 
 .socials section ul{
     display: flex;
+    align-items: center;
     list-style: none;
     column-gap: 30px;
 }
@@ -580,17 +590,19 @@ footer{
     margin-top: 10px;
     margin-bottom: 20px;
     background-color: #0A142F;
-    width: 629px;
+    width: 100%;
     opacity: .3;
 }
 
 .last-section{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     font-size: .6rem;
     color: var(--body-main-header);
-    width: 629px;
+    padding-inline: 10px;
+    width: 100%;
 }
 
 .footer-heading p:first-child{
@@ -609,4 +621,226 @@ footer{
 .for-link a{
     text-decoration: none;
     color: var(--body-main-header);
+}
+
+section.nav-bar{
+    display: none;
+}
+
+@media (max-width: 919px) {
+    .header-footer{
+        margin-right: 100px;
+    }
+}
+
+@media (max-width: 895px) {
+    .header-footer{
+        margin-right: 80px;
+    }
+}
+
+@media (max-width: 855px) {
+    .header-footer{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 749px) {
+    .header-footer{
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 577px) {
+    .header-main{
+        margin-top: 40px;
+        flex-direction: column;
+    }
+
+    .header-main section.icon ul{
+        flex-direction: row;
+        row-gap: 0;
+        column-gap: 20px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+
+    nav section.nav{
+        column-gap: 30px;
+    }
+}
+
+@media (max-width: 530px) {
+    nav section.nav{
+        column-gap: 10px;
+    }
+}
+
+@media (max-width: 530px) {
+    nav section.nav, nav section.header-btn{
+        display: none;
+    }
+
+    nav section.nav-bar{
+        display: flex;
+        row-gap: 5px;
+        flex-direction: column;
+    }
+
+    nav section.nav-bar span{
+
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+
+    nav{
+        margin-right: 20px;
+    }
+
+    .header-main{
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 1149px) {
+    section.main-first{
+        column-gap: 100px;
+    }
+}
+
+@media (max-width: 1017px) {
+    section.main-first{
+        column-gap: 80px;
+    }
+}
+
+@media (max-width: 981px) {
+    section.main-first{
+        column-gap: 50px;
+    }
+
+    .main-first-right, .main-first-left{
+        max-width: 50%;
+    }
+
+    .main-first-right img{
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    section.main-first{
+        flex-direction: column;
+    }
+
+    .main-first-right, .main-first-left{
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .main-first-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-first-right img{
+        max-width: 100%;
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 1082px) {
+    .main-second-container{
+        margin-right: 60px;
+    }
+}
+
+@media (max-width: 1064px) {
+    .main-second-container{
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 1022px) {
+    .main-second-container{
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 980px) {
+    .main-second-container{
+        flex-direction: column;
+    }
+
+    .main-second-right{
+        display: flex;
+        align-items: center;
+        column-gap: 20px;
+    }
+
+    .main-second-right .container{
+        column-gap: 20px;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 947px) {
+    .main-second-right{
+        display: block;
+    }
+}
+
+@media (max-width: 956px) {
+    .footer-first-left {
+        flex: 65%;
+    }
+    
+    .footer-first-left {
+        flex: 35%;
+    }
+    
+    .footer-first-left img{
+        width: 400px;
+    }
+}
+
+@media (max-width: 726px) {
+    .footer-first-left img{
+        display: none;
+    }
+
+    .newsletter{
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 20px 10px;
+        align-items: start;
+    }
+}
+
+@media (max-width: 769px) {
+    .socials {
+        flex-direction: column;
+        row-gap: 20px;
+    }
+}
+
+@media (max-width: 714px) {
+    .footer-first-left h1{
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 658px) {
+    .footer-first{
+        flex-direction: column;
+    }
+
+    .footer-first .left{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-inline: 20px;
+        align-items: end;
+    }
 }
