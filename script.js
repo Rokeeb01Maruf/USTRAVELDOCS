@@ -1,5 +1,6 @@
 const navbar = document.querySelector("section.nav-bar img")
 const nav = document.querySelector("nav")
+const show = document.querySelector("nav section.header-btn, nav section.nav")
 
 navbar.addEventListener("click", ()=>{
     const src = navbar.getAttribute("src")

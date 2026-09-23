@@ -685,6 +685,10 @@ section.nav-bar{
         background-color: rgba(0, 0, 0, .7);
     }
 
+    nav.active section.header-btn, nav.active section.nav{
+        display: flex;
+    }
+
     nav section.nav{
         width: 100%;
         background-color: rgba(0, 0, 0, .7);
@@ -693,6 +697,7 @@ section.nav-bar{
         flex-direction: column;
         row-gap: 10px;
         padding-block: 10px;
+        display: none;
     }
 
     nav section.header-btn{
@@ -701,6 +706,7 @@ section.nav-bar{
         width: 100%;
         padding-inline: clamp(5%, 80px, 5%);
         padding-bottom: 20px;
+        display: none;
     }
 
     nav section.nav, nav section.header-btn{
@@ -862,5 +868,11 @@ section.nav-bar{
         justify-content: space-between;
         padding-inline: 20px;
         align-items: end;
+    }
+}
+
+@media (max-width: 844px) {
+    .search{
+        width: 60%;
     }
 }
