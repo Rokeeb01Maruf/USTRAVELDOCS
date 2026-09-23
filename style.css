@@ -384,7 +384,6 @@ main{
 
 footer{
     margin-block: 50px 30px;
-    margin-inline: clamp(5%, 80px, 5%);
     background-color: var(--footer-icon-color);
     z-index: 10000;
     display: flex;
@@ -397,6 +396,8 @@ footer{
     display: flex;
     justify-content: space-between;
     z-index: 1000;
+    margin-inline: clamp(5%, 80px, 5%);
+    max-width: 100%;
 }
 
 
@@ -507,6 +508,7 @@ footer{
     align-items: center;
     position: relative;
     z-index: 2;
+    max-width: 100%;
 }
 
 .newsletter{
@@ -518,6 +520,7 @@ footer{
     column-gap: 20px;
     align-items: center;
     z-index: 2;
+    max-width: 100%;
 }
 
 .subscribe input{
@@ -875,4 +878,36 @@ section.nav-bar{
     .search{
         width: 60%;
     }
+}
+
+@media (max-width: 510px) {
+    .main-second{
+        max-width: 100%;
+    }
+
+    .main-second-left, .main-second-right{
+        max-width: 100%;
+    }
+
+    .main-second-left img{
+        max-width: 100%;
+    }
+
+    .main-second-right .container, .newsletter .subscribe,.main-second-right .container section, .main-second-right .container section img{
+        max-width: 100%;
+    }
+
+    .footer-first{
+        width: 100%;
+    }
+
+    .newsletter{
+        margin-inline: 40px;
+        max-width: calc(100%-40px);
+    }
+
+    .newsletter .subscribe input{
+        max-width: 100%;
+    }
+
 }
